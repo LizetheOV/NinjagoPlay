@@ -44,7 +44,7 @@ Luego visita `http://localhost:3000`.
 | Tocar                      | Tajo de espada (también reinicia tras el GAME OVER)     |
 | Arrastrar con un dedo + tocar con otro | Moverse y cortar a la vez                   |
 
-Para jugar en el celular, abre la [demo](https://lizetheov.github.io/ninjago-play/) o sirve la carpeta con `npx serve .` y entra desde el celular a `http://<IP-de-tu-computadora>:3000` (misma red Wi-Fi).
+Para jugar en el celular, abre la [demo](https://lizetheov.github.io/NinjagoPlay/) o sirve la carpeta con `npx serve .` y entra desde el celular a `http://<IP-de-tu-computadora>:3000` (misma red Wi-Fi).
 
 ## Sonido
 
