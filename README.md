@@ -2,9 +2,9 @@
 
 Juego arcade en canvas HTML5 puro donde Lloyd corta enemigos con su espada, sin dependencias ni bundler.
 
-## Demo:
+## Fuente Original:
 
-[NinjagoPlay demo](https://klerith.github.io/claude-asteroids/)
+Este juego fue adaptado desde la versión original del proyecto: [Demo Asteroides](https://github.com/Klerith/claude-asteroids)
 
 ## Descripción del juego
 
