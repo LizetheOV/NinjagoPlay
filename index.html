@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Móvil: ancho del dispositivo, sin zoom por pellizco ni doble toque -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>NinjagoPlay</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      overscroll-behavior: none;       /* sin "rebote" ni recargar al deslizar */
+    }
+    body {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      height: 100dvh;                  /* alto real en móviles (barra del navegador) */
+      touch-action: none;              /* el juego maneja los gestos, no el navegador */
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;     /* sin menú al mantener pulsado (iOS) */
+      -webkit-tap-highlight-color: transparent;
+    }
+    canvas {
+      display: block;
+      border: 1px solid #222;
+      cursor: none;                    /* Lloyd hace de cursor */
+      touch-action: none;
+    }
+    #rotate {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      padding: 0 16px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.65);
+      font: 14px monospace;
+      pointer-events: none;
+    }
+    /* En un teléfono en vertical el juego se ve pequeño: sugerir girarlo */
+    @media (orientation: portrait) and (pointer: coarse) {
+      #rotate { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <!-- El tamaño real del canvas lo ajusta game.js (resizeCanvas) -->
+  <canvas id="canvas" width="800" height="600"></canvas>
+  <div id="rotate">↻ Gira el dispositivo para jugar en horizontal</div>
+  <!-- ?v= obliga al navegador a cargar la versión nueva tras cada cambio
+       (súbelo cuando modifiques sound.js o game.js) -->
+  <script src="sound.js?v=12"></script>
+  <script src="game.js?v=12"></script>
+</body>
+</html>
